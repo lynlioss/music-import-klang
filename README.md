@@ -28,7 +28,7 @@ The exported service currently accepts only the Klang package.
 Run builds in CI or on a desktop, not a phone:
 
 ```
-./gradlew :plugin:assembleRelease :plugin:lintRelease :plugin:testReleaseUnitTest
+./gradlew :plugin:assembleRelease :plugin:lintRelease :plugin:testDebugUnitTest
 ```
 
 The manual **Release** GitHub workflow restores the repository signing key,
