@@ -1,0 +1,245 @@
+{
+  "title": "GNX",
+  "releaseDate": null,
+  "visualIdentity": {
+    "backgroundBase": {
+      "alpha": 255,
+      "blue": 83,
+      "green": 83,
+      "red": 83
+    },
+    "backgroundTintedBase": {
+      "alpha": 255,
+      "blue": 51,
+      "green": 51,
+      "red": 51
+    },
+    "textBase": {
+      "alpha": 255,
+      "blue": 255,
+      "green": 255,
+      "red": 255
+    },
+    "textBrightAccent": {
+      "alpha": 255,
+      "blue": 255,
+      "green": 255,
+      "red": 255
+    },
+    "textSubdued": {
+      "alpha": 255,
+      "blue": 205,
+      "green": 205,
+      "red": 205
+    },
+    "image": [
+      {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02e2a0a166493a2bde5480a420",
+        "maxHeight": 300,
+        "maxWidth": 300
+      },
+      {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00004851e2a0a166493a2bde5480a420",
+        "maxHeight": 64,
+        "maxWidth": 64
+      },
+      {
+        "url": "https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b273e2a0a166493a2bde5480a420",
+        "maxHeight": 640,
+        "maxWidth": 640
+      }
+    ]
+  },
+  "trackList": [
+    {
+      "uri": "spotify:track:5gOfC9UzZQzTyShqPMrpjT",
+      "title": "wacced out murals",
+      "subtitle": "Kendrick Lamar",
+      "isExplicit": true,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": [
+          "EXPLICIT"
+        ]
+      },
+      "duration": 317092,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    },
+    {
+      "uri": "spotify:track:0nj9Bq5sHDiTxSHunhgkFb",
+      "title": "squabble up",
+      "subtitle": "Kendrick Lamar",
+      "isExplicit": true,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": [
+          "EXPLICIT"
+        ]
+      },
+      "duration": 157992,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    },
+    {
+      "uri": "spotify:track:45J4avUb9Ni0bnETYaYFVJ",
+      "title": "luther (with sza)",
+      "subtitle": "Kendrick Lamar,\u00a0SZA",
+      "isExplicit": false,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": []
+      },
+      "duration": 177598,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    },
+    {
+      "uri": "spotify:track:5ho7VSXSmI2KM2nDjcnLyz",
+      "title": "man at the garden",
+      "subtitle": "Kendrick Lamar",
+      "isExplicit": true,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": [
+          "EXPLICIT"
+        ]
+      },
+      "duration": 233173,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    },
+    {
+      "uri": "spotify:track:5S8VwnB4sLi6W0lYTWYylu",
+      "title": "hey now (feat. dody6)",
+      "subtitle": "Kendrick Lamar,\u00a0Dody6",
+      "isExplicit": true,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": [
+          "EXPLICIT"
+        ]
+      },
+      "duration": 217478,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    },
+    {
+      "uri": "spotify:track:0RgjEkSbeuStKfT2Pa4Zai",
+      "title": "reincarnated",
+      "subtitle": "Kendrick Lamar",
+      "isExplicit": true,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": [
+          "EXPLICIT"
+        ]
+      },
+      "duration": 275740,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    },
+    {
+      "uri": "spotify:track:0aB0v4027ukVziUGwVGYpG",
+      "title": "tv off (feat. lefty gunplay)",
+      "subtitle": "Kendrick Lamar,\u00a0Lefty Gunplay",
+      "isExplicit": true,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": [
+          "EXPLICIT"
+        ]
+      },
+      "duration": 220690,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    },
+    {
+      "uri": "spotify:track:4K1Pg0FLno1ltzX3jeqT83",
+      "title": "dodger blue (feat. wallie the sensei, siete7x, roddy ricch)",
+      "subtitle": "Kendrick Lamar,\u00a0Wallie the Sensei,\u00a0Siete7x,\u00a0Roddy Ricch",
+      "isExplicit": true,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": [
+          "EXPLICIT"
+        ]
+      },
+      "duration": 131240,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    },
+    {
+      "uri": "spotify:track:2Uts1QFB4u2YNIMiqcb4de",
+      "title": "peekaboo (feat. azchike)",
+      "subtitle": "Kendrick Lamar,\u00a0AZ Chike",
+      "isExplicit": true,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": [
+          "EXPLICIT"
+        ]
+      },
+      "duration": 155917,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    },
+    {
+      "uri": "spotify:track:1SGvjfc85yzqKXsfKcCxn2",
+      "title": "heart pt. 6",
+      "subtitle": "Kendrick Lamar",
+      "isExplicit": true,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": [
+          "EXPLICIT"
+        ]
+      },
+      "duration": 292461,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    },
+    {
+      "uri": "spotify:track:3aZptNYC6Z1YoumeqZcDcQ",
+      "title": "gnx (feat. hitta j3, youngthreat, peysoh)",
+      "subtitle": "Kendrick Lamar,\u00a0Hitta J3,\u00a0YoungThreat,\u00a0Peysoh",
+      "isExplicit": true,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": [
+          "EXPLICIT"
+        ]
+      },
+      "duration": 193539,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    },
+    {
+      "uri": "spotify:track:0wgOhYnqZKjOHr6bmdz0aN",
+      "title": "gloria (with sza)",
+      "subtitle": "Kendrick Lamar,\u00a0SZA",
+      "isExplicit": true,
+      "isNineteenPlus": false,
+      "contentRatings": {
+        "labels": [
+          "EXPLICIT"
+        ]
+      },
+      "duration": 287522,
+      "isPlayable": true,
+      "playabilityReason": "PLAYABLE",
+      "entityType": "track"
+    }
+  ]
+}

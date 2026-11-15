@@ -1,0 +1,122 @@
+{
+  "contents": [
+    {
+      "musicResponsiveListItemRenderer": {
+        "thumbnail": {
+          "musicThumbnailRenderer": {
+            "thumbnail": {
+              "thumbnails": [
+                {
+                  "url": "https://yt3.googleusercontent.com/nUcE0cU6y5BsIa_fpzqSMSc4qCpHoLxeWb6Co2xfMQOLO3ZTctzNopp8d35VyCPSWb0Z1I_1bxTTyyo=w60-h60-l90-rj",
+                  "width": 60,
+                  "height": 60
+                },
+                {
+                  "url": "https://yt3.googleusercontent.com/nUcE0cU6y5BsIa_fpzqSMSc4qCpHoLxeWb6Co2xfMQOLO3ZTctzNopp8d35VyCPSWb0Z1I_1bxTTyyo=w120-h120-l90-rj",
+                  "width": 120,
+                  "height": 120
+                }
+              ]
+            },
+            "thumbnailCrop": "MUSIC_THUMBNAIL_CROP_UNSPECIFIED",
+            "thumbnailScale": "MUSIC_THUMBNAIL_SCALE_ASPECT_FIT"
+          }
+        },
+        "flexColumns": [
+          {
+            "musicResponsiveListItemFlexColumnRenderer": {
+              "text": {
+                "runs": [
+                  {
+                    "text": "hey now (feat. Dody6)",
+                    "navigationEndpoint": {
+                      "watchEndpoint": {
+                        "videoId": "ZnG0WdA6wug",
+                        "watchEndpointMusicSupportedConfigs": {
+                          "watchEndpointMusicConfig": {
+                            "musicVideoType": "MUSIC_VIDEO_TYPE_ATV"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              "displayPriority": "MUSIC_RESPONSIVE_LIST_ITEM_COLUMN_DISPLAY_PRIORITY_HIGH"
+            }
+          },
+          {
+            "musicResponsiveListItemFlexColumnRenderer": {
+              "text": {
+                "runs": [
+                  {
+                    "text": "Kendrick Lamar",
+                    "navigationEndpoint": {
+                      "browseEndpoint": {
+                        "browseId": "UCprAFmT0C6O4X0ToEXpeFTQ",
+                        "browseEndpointContextSupportedConfigs": {
+                          "browseEndpointContextMusicConfig": {
+                            "pageType": "MUSIC_PAGE_TYPE_ARTIST"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "text": " \u2022 "
+                  },
+                  {
+                    "text": "GNX",
+                    "navigationEndpoint": {
+                      "browseEndpoint": {
+                        "browseId": "MPREb_wCND3crJyDP",
+                        "browseEndpointContextSupportedConfigs": {
+                          "browseEndpointContextMusicConfig": {
+                            "pageType": "MUSIC_PAGE_TYPE_ALBUM"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "text": " \u2022 "
+                  },
+                  {
+                    "text": "3:38"
+                  }
+                ]
+              },
+              "displayPriority": "MUSIC_RESPONSIVE_LIST_ITEM_COLUMN_DISPLAY_PRIORITY_HIGH"
+            }
+          },
+          {
+            "musicResponsiveListItemFlexColumnRenderer": {
+              "text": {
+                "runs": [
+                  {
+                    "text": "48M plays"
+                  }
+                ]
+              },
+              "displayPriority": "MUSIC_RESPONSIVE_LIST_ITEM_COLUMN_DISPLAY_PRIORITY_HIGH"
+            }
+          }
+        ],
+        "badges": [
+          {
+            "musicInlineBadgeRenderer": {
+              "icon": {
+                "iconType": "MUSIC_EXPLICIT_BADGE"
+              },
+              "accessibilityData": {
+                "accessibilityData": {
+                  "label": "Explicit"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

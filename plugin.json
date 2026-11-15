@@ -1,0 +1,22 @@
+{
+  "apiVersion": 2,
+  "id": "music-import",
+  "name": "Music Import",
+  "version": "1.0.0",
+  "type": "musicImport",
+  "author": "lynlioss",
+  "repository": "https://github.com/lynlioss/music-import-klang",
+  "summary": "Download songs, albums, EPs and playlists from shared music links.",
+  "description": "Reads Spotify and YouTube Music metadata and downloads matching public recordings with original audio, tags and artwork. Runs in a separate Android service with yt-dlp, Python, QuickJS and FFmpeg.",
+  "privacy": "Sends submitted links and song searches to Spotify and YouTube. Checks GitHub for extractor updates. Files stay on your device.",
+  "features": ["Songs, albums, EPs and playlists", "Original audio codec", "Tags and embedded artwork", "Background downloads"],
+  "buttons": [{"label": "Source", "url": "https://github.com/lynlioss/music-import-klang", "icon": "source"}],
+  "settings": [],
+  "defaultEnabled": true,
+  "musicImport": {
+    "package": "io.github.lynlioss.musicimport",
+    "service": "io.github.lynlioss.musicimport.MusicImportService",
+    "hosts": ["open.spotify.com", "music.youtube.com", "youtube.com", "www.youtube.com", "m.youtube.com", "youtu.be"],
+    "schemes": ["spotify"]
+  }
+}

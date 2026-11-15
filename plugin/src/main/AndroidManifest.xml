@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <queries><package android:name="io.github.lynlioss.klang" /></queries>
+    <application android:label="Music Import for Klang" android:theme="@android:style/Theme.Material.Light.NoActionBar" android:allowBackup="false" android:extractNativeLibs="true">
+        <service android:name=".MusicImportService" android:exported="true">
+            <intent-filter><action android:name="io.github.lynlioss.klang.MUSIC_IMPORT_V2" /></intent-filter>
+            <meta-data android:name="klang.plugin" android:resource="@raw/plugin" />
+        </service>
+    </application>
+</manifest>
