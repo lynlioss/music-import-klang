@@ -12,7 +12,7 @@ import java.io.File
 import java.util.UUID
 import java.util.concurrent.ConcurrentHashMap
 
-/** API 2 IPC: opaque provider metadata in, tagged original file out. Klang owns all library decisions. */
+/** API 1 IPC: opaque provider metadata in, tagged original file out. Klang owns all library decisions. */
 class MusicImportService : Service() {
     private val scope = CoroutineScope(SupervisorJob() + Dispatchers.IO)
     private val jobs = ConcurrentHashMap<String, Job>()

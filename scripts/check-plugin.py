@@ -7,7 +7,7 @@ manifest = json.loads((root / 'plugin.json').read_text())
 assert manifest == json.loads((root / 'plugin/src/main/res/raw/plugin.json').read_text())
 build = (root / 'plugin/build.gradle.kts').read_text()
 assert f'versionName = "{manifest["version"]}"' in build
-assert manifest['apiVersion'] == 2 and manifest['type'] == 'musicImport'
+assert manifest['apiVersion'] == 1 and manifest['type'] == 'musicImport'
 assert manifest['musicImport']['package'] in build
 assert 'GPL' in (root / 'README.md').read_text()
 print('Plugin manifest, embedded manifest, version and package agree')

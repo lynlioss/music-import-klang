@@ -1,8 +1,9 @@
-# Klang music provider API 2
+# Klang music provider API 1
 
-This is independent of API 1 declarative lyrics. Implement an exported Android
+Music downloads and declarative lyrics are provider types in Plugin API 1, which
+is still being developed. Implement an exported Android
 Service returning `Messenger(...).binder` from `onBind`. Advertise the intent
-`io.github.lynlioss.klang.MUSIC_IMPORT_V2` and embed your manifest with service
+`io.github.lynlioss.klang.MUSIC_IMPORT_V1` and embed your manifest with service
 metadata `klang.plugin` referencing a raw JSON resource. Keep service/package
 names permanent. Declare network access. The host binds from its foreground WorkManager worker.
 

@@ -15,7 +15,7 @@ Install from Klang → Settings → Plugins → Recommended plugins. Android ask
 installation confirmation. You can also download `plugin.apk` from a stable
 release. Enable Music Import in Klang after installation. Android 16 / ARM64.
 
-## Plugin API 2
+## Plugin API 1
 
 See [API.md](API.md) for the complete provider-neutral protocol. The contract
 uses Messenger messages with a response Messenger and random request token.
