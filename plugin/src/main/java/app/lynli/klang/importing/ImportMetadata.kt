@@ -18,7 +18,7 @@ internal fun tagInfo(info: JSONObject, song: ImportSong) {
         info.put("release_date", it.replace("-", "").take(8))
         info.put("meta_date", it)
     }
-    info.put("album_artist", song.artist.ifBlank { "Unknown artist" })
+    info.put("album_artist", song.albumArtist.ifBlank { song.artist }.ifBlank { "Unknown artist" })
     if (song.trackNumber > 0) info.put("track_number", song.trackNumber)
     if (song.discNumber > 0) info.put("disc_number", song.discNumber)
     song.artwork?.let { url ->

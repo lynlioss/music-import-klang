@@ -27,6 +27,18 @@ class ImportTest {
         assertEquals("album", youtube.kind)
         assertTrue(youtube.playlist)
     }
+    @Test fun albumArtistStaysConstantWhileSongArtistKeepsGuestCredits() {
+        val entity = JSONObject().put("title", "BULLY - DELUXE").put("subtitle", "Kanye West")
+        val tracks = listOf(song.copy(artist = "Kanye West, Ye"), song.copy(artist = "Kanye West, Ye, Don Toliver"))
+        val songs = SpotifyMetadata.albumSongs(entity, tracks)
+        assertEquals(setOf("Kanye West"), songs.map { it.albumArtist }.toSet())
+        assertEquals(tracks.map { it.artist }, songs.map { it.artist })
+        val info = JSONObject()
+        tagInfo(info, songs.last())
+        assertEquals("Kanye West", info.getString("album_artist"))
+        assertEquals("Kanye West, Ye, Don Toliver", info.getString("artist"))
+        assertEquals(songs.last(), io.github.lynlioss.musicimport.readSong(io.github.lynlioss.musicimport.songJson(songs.last())))
+    }
     private val spotifyId = "4cOdK2wGLETKBW3PvgPWqT"
     private val song = ImportSong("spotify:track:$spotifyId", "https://open.spotify.com/track/$spotifyId",
         "Never Gonna Give You Up", "Rick Astley", "Whenever You Need Somebody", 213_000,

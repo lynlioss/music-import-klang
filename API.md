@@ -49,6 +49,11 @@ Reserve `payload` for the host journal; don't emit that key in song objects.
 Collections preserve song order. Maximum 10,000 songs / 16 MiB metadata. Individual
 payloads and progress messages must stay below Binder's transaction limit.
 
+`albumArtist` is an optional common album credit, separate from each track's
+`artist` (which retains guests). Embed that credit in the downloaded file's
+album artist tag. Link resolution and recording matching allow five minutes;
+the host allows a 30-second grace period for resolve and 45 minutes per download.
+
 Klang owns foreground scheduling and keeps the provider service bound throughout
 DOWNLOAD. No second foreground service or background activity launch is needed.
 The provider is destroyed when its last client unbinds. Write the complete tagged file to `output`; close your duplicate of the

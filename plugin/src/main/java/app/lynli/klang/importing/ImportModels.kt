@@ -61,6 +61,7 @@ internal data class ImportSong(
     val album: String = "", val durationMs: Long = 0, val artwork: String? = null,
     val date: String? = null, val trackNumber: Int = 0, val discNumber: Int = 0,
     val spotify: Boolean = false, val explicit: Boolean? = null,
+    val albumArtist: String = "",
 )
 
 internal const val STREAM_COPY_ARGUMENTS = "ExtractAudio+ffmpeg_o:-c:a copy"

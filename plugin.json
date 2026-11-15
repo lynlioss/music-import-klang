@@ -2,7 +2,7 @@
   "apiVersion": 1,
   "id": "music-import",
   "name": "Music Import",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "musicImport",
   "author": "lynlioss",
   "repository": "https://github.com/lynlioss/music-import-klang",

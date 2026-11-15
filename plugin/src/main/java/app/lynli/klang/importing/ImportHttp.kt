@@ -14,9 +14,9 @@ import java.util.concurrent.TimeUnit
 /** Call timeout includes redirects and the response body; coroutine cancellation cancels the socket. */
 internal object ImportHttp {
     private val client = OkHttpClient.Builder()
-        .connectTimeout(10, TimeUnit.SECONDS)
-        .readTimeout(15, TimeUnit.SECONDS)
-        .callTimeout(20, TimeUnit.SECONDS)
+        .connectTimeout(30, TimeUnit.SECONDS)
+        .readTimeout(60, TimeUnit.SECONDS)
+        .callTimeout(90, TimeUnit.SECONDS)
         .build()
 
     suspend fun getText(url: String, bearer: String? = null, httpClient: OkHttpClient = client,

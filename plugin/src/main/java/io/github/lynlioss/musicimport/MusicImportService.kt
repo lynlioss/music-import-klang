@@ -36,7 +36,7 @@ class MusicImportService : Service() {
                         download(JSONObject(payload), output, key) { state -> send(reply, PROGRESS, token, state.toString()) }
                             .let { send(reply, RESULT, token, it.toString()) }
                     } else {
-                        val preview = withTimeout(120_000) {
+                        val preview = withTimeout(300_000) {
                             ImportResolver(this@MusicImportService).resolve(ImportLink.parse(payload), key)
                         }
                         val json = JSONObject().put("title", preview.title).put("collection", preview.link.playlist)
@@ -54,7 +54,8 @@ class MusicImportService : Service() {
                     }
                 } catch (timeout: TimeoutCancellationException) {
                     ImportEngine.stop(key)
-                    send(reply, FAILURE, token, "Reading this link took too long. Try again.")
+                    send(reply, FAILURE, token, if (downloading) "Finding the recording took too long. Retry this song."
+                        else "Reading this link took too long. Try again.")
                 } catch (cancelled: CancellationException) {
                     ImportEngine.stop(key)
                     throw cancelled
@@ -96,11 +97,11 @@ class MusicImportService : Service() {
             val original = readSong(payload)
             progress(JSONObject().put("phase", "matching").put("progress", 0))
             val (song, catalog) = coroutineScope {
-                val metadata = async { withTimeoutOrNull(6_000) { SpotifyMetadata.enrich(original) } ?: original }
+                val metadata = async { withTimeoutOrNull(15_000) { SpotifyMetadata.enrich(original) } ?: original }
                 val matches = async { if (original.spotify) YouTubeCatalog.searchOrEmpty(original) else emptyList() }
                 metadata.await() to matches.await()
             }
-            val info = withTimeout(120_000) {
+            val info = withTimeout(300_000) {
                 if (song.spotify) findRecording(song, catalog, searchVideos = {
                     runInterruptible { ImportEngine.info("ytsearch10:${song.artist} ${song.title} official audio", processId, flat = true)
                         .optJSONArray("entries")?.objects().orEmpty() }

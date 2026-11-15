@@ -57,3 +57,7 @@ Liner's `spotifyPathfinder.ts` uses the web-player `fetchPlaylistContents` opera
 The plugin's manual Release workflow builds, lints, tests and verifies ARM64 runtimes and the reflected ZIP constructors. Klang's separate CI checks the host and rejects download runtimes in its APK. No Android builds ran on the phone during this change.
 
 Test song, album, EP and playlist imports; metadata/artwork in another player; duplicate warnings and overrides; cancellation; network interruption; process recreation; playlist order; background-only completion alerts; plugin installation and updates. Verify original Opus/AAC remains unchanged. Anonymous YouTube source quality, matching accuracy and speed still require device testing.
+
+## BULLY - DELUXE metadata check
+
+The supplied Spotify album `3hwveWhYFxGDLy6K6xlwFh` returned 20 tracks, album title BULLY - DELUXE, and album artist Kanye West. Track credits vary (Ye and featured guests). Album imports now tag the common album artist separately from these track credits; Klang groups by that credit and handles older imports that repeated guests in the album artist field.

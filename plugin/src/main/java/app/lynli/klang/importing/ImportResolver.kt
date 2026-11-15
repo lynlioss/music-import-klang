@@ -41,7 +41,7 @@ internal object ImportEngine {
 
     fun request(url: String? = null) = YoutubeDLRequest(url?.let { listOf(it) }.orEmpty()).apply {
         addOption("--ignore-config")
-        addOption("--socket-timeout", 25)
+        addOption("--socket-timeout", 60)
         addOption("--retries", 3)
         addOption("--extractor-retries", 2)
     }
@@ -87,7 +87,8 @@ internal fun youtubeSong(json: JSONObject, id: String): ImportSong {
     val title = json.stringOrNull("track") ?: cleanVideoTitle(raw, artist)
     return ImportSong("youtube:$id", "https://music.youtube.com/watch?v=$id", title, artist,
         json.stringOrNull("album").orEmpty(), (json.optDouble("duration", 0.0) * 1000).toLong(),
-        thumbnail(json), json.stringOrNull("release_date"), json.optInt("track_number"), json.optInt("disc_number"))
+        thumbnail(json), json.stringOrNull("release_date"), json.optInt("track_number"), json.optInt("disc_number"),
+        albumArtist = json.optString("album_artist"))
 }
 
 internal fun cleanVideoTitle(title: String, artist: String): String {
@@ -162,7 +163,8 @@ internal object SpotifyMetadata {
         } catch (_: Exception) { null } ?: return song
         return song.copy(album = rich.album.ifBlank { song.album }, artwork = rich.artwork ?: song.artwork,
             date = rich.date ?: song.date, trackNumber = rich.trackNumber, discNumber = rich.discNumber,
-            durationMs = rich.durationMs.takeIf { it > 0 } ?: song.durationMs, explicit = rich.explicit ?: song.explicit)
+            durationMs = rich.durationMs.takeIf { it > 0 } ?: song.durationMs, explicit = rich.explicit ?: song.explicit,
+            albumArtist = song.albumArtist.ifBlank { rich.albumArtist })
     }
 
     private suspend fun fullPlaylist(id: String, token: String, total: Int): List<ImportSong> {
@@ -250,9 +252,12 @@ internal object SpotifyMetadata {
         val artwork = image(entity.optJSONObject("visualIdentity"))
         val title = entity.stringOrNull("title").orEmpty()
         val date = entity.optJSONObject("releaseDate")?.stringOrNull("isoString")?.take(10)
+        val albumArtist = entity.optJSONArray("artists")?.objects()?.joinToString(", ") { it.optString("name") }
+            ?.takeIf { it.isNotBlank() } ?: entity.optString("subtitle").replace('\u00a0', ' ').trim()
         return songs.mapIndexed { index, song -> song.copy(album = title, artwork = song.artwork ?: artwork,
             date = song.date ?: date, trackNumber = song.trackNumber.takeIf { it > 0 } ?: index + 1,
-            discNumber = song.discNumber.takeIf { it > 0 } ?: 1) }
+            discNumber = song.discNumber.takeIf { it > 0 } ?: 1,
+            albumArtist = albumArtist.ifBlank { song.albumArtist }) }
     }
 
     internal fun parsePublicTrack(json: JSONObject): ImportSong {
@@ -265,7 +270,10 @@ internal object SpotifyMetadata {
             (json.optJSONObject("duration") ?: json.optJSONObject("trackDuration"))?.optLong("totalMilliseconds") ?: 0,
             image(album?.optJSONObject("coverArt")), album?.optJSONObject("date")?.stringOrNull("isoString")?.take(10),
             json.optInt("trackNumber"), json.optInt("discNumber"), spotify = true,
-            explicit = json.path("contentRating")?.stringOrNull("label")?.let { it == "EXPLICIT" })
+            explicit = json.path("contentRating")?.stringOrNull("label")?.let { it == "EXPLICIT" },
+            albumArtist = album?.optJSONObject("artists")?.optJSONArray("items")?.objects()?.joinToString(", ") {
+                it.optJSONObject("profile")?.optString("name").orEmpty()
+            }.orEmpty())
     }
 
     private fun parseApiTrack(json: JSONObject): ImportSong {
@@ -275,7 +283,8 @@ internal object SpotifyMetadata {
             album?.stringOrNull("name").orEmpty(), json.optLong("duration_ms"),
             album?.optJSONArray("images")?.objects()?.maxByOrNull { it.optInt("width") }?.stringOrNull("url"),
             album?.stringOrNull("release_date"), json.optInt("track_number"), json.optInt("disc_number"), true,
-            if (json.isNull("explicit")) null else json.optBoolean("explicit"))
+            if (json.isNull("explicit")) null else json.optBoolean("explicit"),
+            albumArtist = album?.optJSONArray("artists")?.objects()?.joinToString(", ") { it.optString("name") }.orEmpty())
     }
 
     private fun image(json: JSONObject?): String? {

@@ -11,6 +11,7 @@ internal fun songJson(song: ImportSong): JSONObject {
     result.put("title", song.title)
     result.put("artist", song.artist)
     result.put("album", song.album)
+    result.put("albumArtist", song.albumArtist)
     result.put("duration", song.durationMs)
     result.put("artwork", song.artwork)
     result.put("date", song.date)
@@ -33,5 +34,6 @@ internal fun readSong(json: JSONObject): ImportSong {
     val disc = json.optInt("disc")
     val spotify = json.optBoolean("spotify")
     val explicit = if (json.isNull("explicit")) null else json.optBoolean("explicit")
-    return ImportSong(id, url, title, artist, album, duration, artwork, date, track, disc, spotify, explicit)
+    return ImportSong(id, url, title, artist, album, duration, artwork, date, track, disc, spotify, explicit,
+        json.optString("albumArtist"))
 }
